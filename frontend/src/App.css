@@ -1,22 +1,9 @@
-* {
-  background-color: rgb(234, 234, 244);
-}
-
 @import url("https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap");
 
 $black: black;
 
-body {
-  background-image: linear-gradient(
-    to right top,
-    #c7ebe9,
-    #b2f1e2,
-    #a7f5cf,
-    #adf7b2,
-    #c1f690
-  );
-  color: black;
-  font-family: "Syne Mono", monospace;
+* {
+  background-color: black;
 }
 
 .wrapper {
@@ -100,6 +87,7 @@ body {
   border-radius: 6px 17px 17px 6px;
   overflow: hidden;
   z-index: 0;
+  background-image: url(logo.png);
   &.dotted-page {
     background: linear-gradient(90deg, #fbfae8 10px, transparent 1%) center,
       linear-gradient(#fbfae8 10px, transparent 1%) center, #999;
@@ -124,4 +112,13 @@ body {
 
 a {
   text-decoration: none;
+}
+
+.logo-carnet {
+  z-index: 2;
+  position: absolute;
+  top: 40%;
+  left: 67%;
+  transform: translate(-50%, -50%);
+  height: 10em;
 }
