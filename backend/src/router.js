@@ -2,13 +2,13 @@ const express = require("express");
 
 const router = express.Router();
 
-const userControllers = require("./controllers/userControllers");
+const categoryControllers = require("./controllers/categoryControllers");
 
-router.get("/user", userControllers.browse);
-router.get("/user/:id", userControllers.read);
-router.put("/user/:id", userControllers.edit);
-router.post("/user", userControllers.add);
-router.delete("/user/:id", userControllers.destroy);
+router.get("/category", categoryControllers.browse);
+router.get("/category/:id", categoryControllers.read);
+router.put("/category/:id", categoryControllers.edit);
+router.post("/category", categoryControllers.add);
+router.delete("/category/:id", categoryControllers.destroy);
 
 const noteControllers = require("./controllers/noteControllers");
 
@@ -18,13 +18,13 @@ router.put("/note/:id", noteControllers.edit);
 router.post("/note", noteControllers.add);
 router.delete("/note/:id", noteControllers.destroy);
 
-const letterControllers = require("./controllers/moodControllers");
+const moodControllers = require("./controllers/moodControllers");
 
-router.get("/letter", letterControllers.browse);
-router.get("/letter/:id", letterControllers.read);
-router.put("/letter/:id", letterControllers.edit);
-router.post("/letter", letterControllers.add);
-router.delete("/letter/:id", letterControllers.destroy);
+router.get("/mood", moodControllers.browse);
+router.get("/mood/:id", moodControllers.read);
+router.put("/mood/:id", moodControllers.edit);
+router.post("/mood", moodControllers.add);
+router.delete("/mood/:id", moodControllers.destroy);
 
 const pictureControllers = require("./controllers/pictureControllers");
 

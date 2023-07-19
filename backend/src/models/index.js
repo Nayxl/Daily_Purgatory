@@ -29,15 +29,10 @@ pool.getConnection().catch(() => {
 
 const models = {};
 
-const UserManager = require("./UserManager");
+const CategoryManager = require("./CategoryManager");
 
-models.user = new UserManager();
-models.user.setDatabase(pool);
-
-const JournalManager = require("./JournalManager");
-
-models.journal = new JournalManager();
-models.journal.setDatabase(pool);
+models.category = new CategoryManager();
+models.category.setDatabase(pool);
 
 const NoteManager = require("./NoteManager");
 
@@ -49,7 +44,7 @@ const MoodManager = require("./MoodManager");
 models.mood = new MoodManager();
 models.mood.setDatabase(pool);
 
-const Picture = require("./PictureManager");
+const PictureManager = require("./PictureManager");
 
 models.picture = new PictureManager();
 models.picture.setDatabase(pool);

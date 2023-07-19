@@ -1,7 +1,7 @@
 const models = require("../models");
 
 const browse = (req, res) => {
-  models.journal
+  models.category
     .findAll()
     .then(([rows]) => {
       res.send(rows);
@@ -13,7 +13,7 @@ const browse = (req, res) => {
 };
 
 const read = (req, res) => {
-  models.journal
+  models.category
     .find(req.params.id)
     .then(([rows]) => {
       if (rows[0] == null) {
@@ -29,14 +29,14 @@ const read = (req, res) => {
 };
 
 const edit = (req, res) => {
-  const journal = req.body;
+  const category = req.body;
 
   // TODO validations (length, format...)
 
-  journal.id = parseInt(req.params.id, 10);
+  category.id = parseInt(req.params.id, 10);
 
-  models.journal
-    .update(journal)
+  models.category
+    .update(category)
     .then(([result]) => {
       if (result.affectedRows === 0) {
         res.sendStatus(404);
@@ -51,10 +51,10 @@ const edit = (req, res) => {
 };
 
 const add = (req, res) => {
-  const journal = req.body;
+  const category = req.body;
 
-  models.journal
-    .insert(journal)
+  models.category
+    .insert(category)
     .then(([result]) => {
       res.location(`/users/${result.insertId}`).sendStatus(201);
     })
