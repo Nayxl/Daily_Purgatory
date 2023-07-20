@@ -49,6 +49,11 @@ const PictureManager = require("./PictureManager");
 models.picture = new PictureManager();
 models.picture.setDatabase(pool);
 
+const MoodPictureManager = require("./MoodPictureManager");
+
+models.mood_picture = new MoodPictureManager();
+models.mood_picture.setDatabase(pool);
+
 // bonus: use a proxy to personalize error message,
 // when asking for a non existing model
 

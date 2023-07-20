@@ -19,6 +19,7 @@ $black: black;
   text-transform: uppercase;
   overflow: hidden;
   margin: 0 auto;
+  background-color: rgb(254, 254, 255);
 }
 
 .notebook {
@@ -39,7 +40,7 @@ $black: black;
 }
 
 .notebook-front {
-  background: #24646f;
+  background: #580735;
   position: absolute;
   border-radius: 6px 17px 17px 6px;
   transition: 0.6s linear;
@@ -67,13 +68,15 @@ $black: black;
   margin-top: 8rem;
   font-size: 22px;
   color: black;
-  background: #e8e8e0;
+  //background: #e8e8e0;//
+  background: #fdf8f2;
   text-align: left;
   padding-left: 100%;
   width: 0;
-  aspect-ratio: 732 / 462;
+  //aspect-ratio: 732 / 462;//
+  aspect-ratio: 768 / 484;
   overflow: hidden;
-  background-image: url("./assets/logo.png");
+  background-image: url("./assets/logotest.png");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -110,11 +113,13 @@ $black: black;
   }
 }
 
+// CSS pour la partie catégorie //
 .title {
   display: flex;
   justify-content: center;
   font-style: italic;
   font-size: 4em;
+  color: rgb(20, 16, 16);
 }
 
 .theme {
@@ -122,11 +127,12 @@ $black: black;
   justify-content: center;
   font-style: italic;
   font-size: 2em;
-  color: darkblue;
+  color: rgb(201, 201, 226);
 }
 
 a {
   text-decoration: none;
+  color: white;
 }
 
 .logo-carnet {
@@ -136,4 +142,74 @@ a {
   left: 67%;
   transform: translate(-50%, -50%);
   height: 10em;
+}
+
+.theme-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex: 1;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #000000;
+  background-color: #580735;
+  border-radius: 10px 17px 17px 10px;
+}
+
+.body-category {
+  background-color: #999095f1;
+  height: 100vh;
+}
+
+// CSS pour l'entête des différents thèmes //
+
+.container-page {
+  background-image: url("./assets/feuille.png");
+  display: flex;
+  flex-grow: initial;
+  justify-content: center;
+  height: 100vh;
+}
+
+.body-page {
+  background-color: #580735;
+}
+
+.body-page {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+// Style pour chaques notes //
+
+figure {
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #423c33;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+}
+
+figure:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+figcaption {
+  margin-top: 10px;
+}
+
+//  Style pour le message "Aucunes notes //
+.no-add {
+  font-size: 16px;
+  color: #999;
+}
+
+.image-list {
+  display: flex;
+  justify-content: space-between;
+  height: 20vh;
+  width: 40vh;
 }

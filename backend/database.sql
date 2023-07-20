@@ -48,7 +48,10 @@ INSERT INTO note (title, description, category_id) VALUES
 
 INSERT INTO mood (id, title, description, category_id) VALUES (42, 'Dear...', 'Blablablablablablablabla', 1);
 
-INSERT INTO picture (id, name, image, category_id) VALUES (44, 'Malu', 'image.jpg', 1);
+INSERT INTO picture (id, name, image, category_id) VALUES 
+(44, 'Malu', '/assets/feudecamp.png', 1),
+(56, 'Bob', '/assets/glycine.jpg', 1),
+( 8, 'Jean', '/public/assets/mer.jpg', 1);
 
 INSERT INTO mood_picture (mood_id, picture_id) VALUES (42, 44);
 

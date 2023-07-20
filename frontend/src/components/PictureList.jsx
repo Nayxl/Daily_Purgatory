@@ -15,26 +15,34 @@ function PictureList() {
   }, []);
 
   return (
-    <Link to="/category">
+    <div className="container-page">
       <div>
-        <h1 className="title"> Vos photos</h1>
-        <section>
+        <Link to="/category">
+          <h1 className="title"> Vos photos</h1>
+        </Link>
+        <section className="body-page">
           {pictures.length > 0 ? (
             pictures.map((picture) => (
               <figure key={picture.id}>
-                <img src={picture.url} alt={picture.title} />
                 <figcaption>
-                  <p>{picture.title}</p>
+                  <p>{picture.name}</p>
                 </figcaption>
+                <img
+                  className="image-list"
+                  src={`${import.meta.env.VITE_BACKEND_URL}${picture.image}`}
+                  alt={picture.name}
+                />
               </figure>
             ))
           ) : (
-            <p className="no-add">Aucune photo</p>
+            <p className="no-add">Aucunes photos</p>
           )}
         </section>
       </div>
-    </Link>
+    </div>
   );
 }
 
 export default PictureList;
+
+// <img src={picture.image} alt={picture.name} /> //

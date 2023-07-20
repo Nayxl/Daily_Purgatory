@@ -13,15 +13,20 @@ function MoodList() {
   }, []);
 
   return (
-    <Link to="/category">
+    <div className="container-page">
       <div>
-        <h1 className="title"> Votre mood </h1>
-        <section>
+        <Link to="/category">
+          <h1 className="title"> Vos lettres </h1>
+        </Link>
+        <section className="body-page">
           {moods.length > 0 ? (
             moods.map((mood) => (
               <figure key={mood.id}>
                 <figcaption>
                   <p>{mood.title}</p>
+                </figcaption>
+                <figcaption>
+                  <p>{mood.description}</p>
                 </figcaption>
               </figure>
             ))
@@ -30,7 +35,7 @@ function MoodList() {
           )}
         </section>
       </div>
-    </Link>
+    </div>
   );
 }
 
