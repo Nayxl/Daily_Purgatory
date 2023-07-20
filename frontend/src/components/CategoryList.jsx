@@ -15,22 +15,26 @@ function CategoryList() {
   }, []);
 
   return (
-    <div>
-      <h1 className="title"> Category </h1>
+    <div className="body-category">
+      <Link to="/">
+        <h1 className="title"> Menu </h1>
+      </Link>
       {categories.map((category) => (
-        <li key={category.id}>{category.name}</li>
+        <li key={category.id} />
       ))}
-      <Link to="/note">
-        <h2 className="theme"> Notes </h2>
-      </Link>
+      <div className="theme-container">
+        <Link to="/note">
+          <h2 className="theme"> Notes </h2>
+        </Link>
 
-      <Link to="/mood">
-        <h2 className="theme"> Mood </h2>
-      </Link>
+        <Link to="/mood">
+          <h2 className="theme"> Lettres</h2>
+        </Link>
 
-      <Link to="/picture">
-        <h2 className="theme"> Picture </h2>
-      </Link>
+        <Link to="/picture">
+          <h2 className="theme"> Galerie </h2>
+        </Link>
+      </div>
     </div>
   );
 }

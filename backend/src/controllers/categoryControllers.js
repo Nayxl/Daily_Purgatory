@@ -65,7 +65,7 @@ const add = (req, res) => {
 };
 
 const destroy = (req, res) => {
-  models.journal
+  models.category
     .delete(req.params.id)
     .then(([result]) => {
       if (result.affectedRows === 0) {

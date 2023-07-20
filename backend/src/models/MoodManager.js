@@ -6,17 +6,25 @@ class MoodManager extends AbstractManager {
   }
 
   insert(mood) {
-    return this.database.query(
-      `insert into ${this.table} (title, description) values (?, ?)`,
-      [mood.title, mood.description]
-    );
+    return this.database
+      .query(`INSERT INTO ${this.table} (title, description) VALUES (?, ?)`, [
+        mood.title,
+        mood.description,
+      ])
+      .then((result) => result.insertId);
   }
 
   update(mood) {
     return this.database.query(
-      `update ${this.table} set title = ? where id = ?`,
-      [mood.title, mood.id, mood.description]
+      `UPDATE ${this.table} SET title = ? WHERE id = ?`,
+      [mood.title, mood.id]
     );
+  }
+
+  delete(moodId) {
+    return this.database.query(`DELETE FROM ${this.table} WHERE id = ?`, [
+      moodId,
+    ]);
   }
 }
 

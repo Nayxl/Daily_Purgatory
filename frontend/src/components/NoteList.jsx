@@ -13,15 +13,20 @@ function NoteList() {
   }, []);
 
   return (
-    <Link to="/category">
+    <div className="container-page">
       <div>
-        <h1 className="title"> Vos notes </h1>
-        <section>
+        <Link to="/category">
+          <h1 className="title"> Vos notes </h1>
+        </Link>
+        <section className="body-page">
           {notes.length > 0 ? (
             notes.map((note) => (
               <figure key={note.id}>
                 <figcaption>
                   <p>{note.title}</p>
+                </figcaption>
+                <figcaption>
+                  <p>{note.description} </p>
                 </figcaption>
               </figure>
             ))
@@ -30,7 +35,7 @@ function NoteList() {
           )}
         </section>
       </div>
-    </Link>
+    </div>
   );
 }
 

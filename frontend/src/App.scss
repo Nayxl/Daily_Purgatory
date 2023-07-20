@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+$black: black;
+
+.wrapper {
+  max-width: 800px;
+  min-height: 100vh;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  text-align: center;
+  text-transform: uppercase;
+  overflow: hidden;
+  margin: 0 auto;
+  background-color: rgb(254, 254, 255);
+}
+
+.notebook {
+  flex-grow: 1;
+  position: relative;
+  transition: 0.5s ease-in-out;
+  border-radius: 6px 17px 17px 6px;
+  display: inline-block;
+  perspective: 1200px;
+  &:hover {
+    /* transform: rotateZ(-20deg); */
+    .notebook-front {
+      transform: rotateY(-60deg);
+      z-index: 999;
+      box-shadow: 3px 3px 3px black;
+    }
+  }
+}
+
+.notebook-front {
+  background: #580735;
+  position: absolute;
+  border-radius: 6px 17px 17px 6px;
+  transition: 0.6s linear;
+  transform-style: preserve-3d;
+  transform-origin: left center 0px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  &:before {
+    background: $black;
+    top: -1px;
+    content: "";
+    position: absolute;
+    width: 11px;
+    height: 22em;
+    z-index: 100000;
+    border-radius: 3px;
+    right: 27px;
+  }
+}
+
+.notebook-skin {
+  margin-top: 8rem;
+  font-size: 22px;
+  color: black;
+  //background: #e8e8e0;//
+  background: #fdf8f2;
+  text-align: left;
+  padding-left: 100%;
+  width: 0;
+  //aspect-ratio: 732 / 462;//
+  aspect-ratio: 768 / 484;
+  overflow: hidden;
+  background-image: url("./assets/logotest.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  box-shadow: 0 3px 3px grey;
+  z-index: 10;
+  &:before {
+    width: 100%;
+    height: 15px;
+    left: 0;
+    bottom: 0;
+    content: "";
+    position: absolute;
+    background: #485247;
+  }
+}
+
+.notebook-bullet-page {
+  background-color: #fbfae8;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 6px 17px 17px 6px;
+  overflow: hidden;
+  z-index: 0;
+  background-image: url(logo.png);
+
+  &.dotted-page {
+    background: linear-gradient(90deg, #fbfae8 10px, transparent 1%) center,
+      linear-gradient(#fbfae8 10px, transparent 1%) center, #999;
+    background-size: 12px 12px;
+  }
+}
+
+// CSS pour la partie catégorie //
+.title {
+  display: flex;
+  justify-content: center;
+  font-style: italic;
+  font-size: 4em;
+  color: rgb(20, 16, 16);
+}
+
+.theme {
+  display: flex;
+  justify-content: center;
+  font-style: italic;
+  font-size: 2em;
+  color: rgba(249, 224, 147, 0.749);
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.logo-carnet {
+  z-index: 2;
+  position: absolute;
+  top: 40%;
+  left: 67%;
+  transform: translate(-50%, -50%);
+  height: 10em;
+}
+
+.theme-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex: 1;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #000000;
+  background-color: #580735;
+  border-radius: 10px 17px 17px 10px;
+}
+
+.body-category {
+  background-color: #d0bdb2;
+  height: 100vh;
+}
+
+// CSS pour l'entête des différents thèmes //
+
+.container-page {
+  background-image: url("./assets/feuille.png");
+  display: flex;
+  flex-grow: initial;
+  justify-content: center;
+  height: 100vh;
+}
+
+.body-page {
+  // background-color: #580735;//
+}
+
+.body-page {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-row: 1;
+  gap: 20px;
+}
+
+// Style pour chaques notes //
+
+figure {
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #ae9165;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  justify-items: flex-start;
+  margin-top: 3rem;
+  padding-top: 3rem;
+}
+
+figure:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+figcaption {
+  margin-top: 10px;
+}
+
+//  Style pour le message "Aucunes notes //
+.no-add {
+  font-size: 16px;
+  color: #999;
+}
+
+.image-list {
+  display: flex;
+  justify-content: space-between;
+  height: 20vh;
+  width: 40vh;
+}
+
+.picture-name {
+  color: #000000;
+  font-size: 2vh;
+  margin: auto;
+}
