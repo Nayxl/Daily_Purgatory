@@ -1,18 +1,18 @@
 import { Link } from "react-router-dom";
-import logo from "../assets/logo.png";
 
 export default function Home() {
   return (
-    <Link to="/category">
+    <div className="body-home">
       <div className="wrapper">
         <div className="notebook">
           <div className="notebook-front">
-            <div className="notebook-skin"> Daily Purgatory </div>
+            <h1 className="notebook-skin">Daily Purgatory</h1>
           </div>
-          <img className="logo-carnet" src={logo} alt="" />
-          <div className="notebook-bullet-page dotted-page" />
+          <div className="notebook-bullet-page dotted-page">
+            <Link to="/category">Go</Link>
+          </div>
         </div>
       </div>
-    </Link>
+    </div>
   );
 }

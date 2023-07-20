@@ -4,7 +4,7 @@ import CategoryList from "./components/CategoryList";
 import NoteList from "./components/NoteList";
 import MoodList from "./components/MoodList";
 import PictureList from "./components/PictureList";
-import "./App.css";
+import "./App.scss";
 
 function App() {
   return (
