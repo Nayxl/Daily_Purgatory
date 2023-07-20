@@ -25,13 +25,15 @@ function PictureList() {
             pictures.map((picture) => (
               <figure key={picture.id}>
                 <figcaption>
-                  <p>{picture.name}</p>
+                  <p className="picture-name"> {picture.name}</p>
                 </figcaption>
-                <img
-                  className="image-list"
-                  src={`${import.meta.env.VITE_BACKEND_URL}${picture.image}`}
-                  alt={picture.name}
-                />
+                <Link to={`/mood/${picture.category_id}`}>
+                  <img
+                    className="image-list"
+                    src={`${import.meta.env.VITE_BACKEND_URL}${picture.image}`}
+                    alt={picture.name}
+                  />
+                </Link>
               </figure>
             ))
           ) : (
@@ -44,5 +46,3 @@ function PictureList() {
 }
 
 export default PictureList;
-
-// <img src={picture.image} alt={picture.name} /> //
