@@ -41,7 +41,7 @@ CREATE TABLE mood_picture (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 INSERT INTO category (id, name) VALUES
-(1, 'Welcome'), (2, 'Connexion');
+(1, 'Welcome'), (2, 'Bienvenue');
 
 INSERT INTO note (title, description, category_id) VALUES
 ('Welcome', 'Il était une fois.....', 1);
