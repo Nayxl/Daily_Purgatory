@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import chat from "../assets/chat.png";
 
 function CategoryList() {
   const [categories, setCategories] = useState([]);
@@ -20,7 +21,7 @@ function CategoryList() {
         <h1 className="title"> Menu </h1>
       </Link>
       {categories.map((category) => (
-        <li key={category.id}>{category.name}</li>
+        <li key={category.id}> Bienvenue </li>
       ))}
       <div className="theme-container">
         <Link to="/note">
@@ -35,6 +36,7 @@ function CategoryList() {
           <h2 className="theme"> Galerie </h2>
         </Link>
       </div>
+      <img className="chat" src={chat} alt={chat} />
     </div>
   );
 }
