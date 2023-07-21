@@ -184,17 +184,66 @@ a {
 
 // Style pour chaques notes //
 
-figure {
-  border: 1px solid #ccc;
-  padding: 10px;
-  background-color: #ae9165;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
+figure.post-it {
+  padding: 2%;
+  background-color: #ffffa5;
+  box-shadow: 2px 4px 6px #444;
+  -moz-box-shadow: 2px 4px 6px #444;
+  -webkit-box-shadow: 2px 4px 6px #444;
+  transform: rotate(2deg);
+  -moz-transform: rotate(2deg);
+  -webkit-transform: rotate(2deg);
+  -o-transform: rotate(2deg);
+  -ms-transform: rotate(2deg);
+  border-bottom-right-radius: 60px 10px;
+}
+
+figure.picture {
+  height: 50rem;
+  width: 50rem;
+}
+
+img.pin {
+  height: 5rem;
+  width: 5rem;
+}
+
+.mood {
+  position: relative;
+  width: 200px;
+  height: 150px;
+  margin: 10px;
+}
+
+figure.mood {
+  position: relative;
   display: flex;
-  justify-content: space-between;
-  justify-items: flex-start;
-  margin-top: 3rem;
-  padding-top: 3rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.feuille-papier {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  filter: hue-rotate(120deg);
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.mood-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 figure:hover {

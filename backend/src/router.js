@@ -37,6 +37,6 @@ router.get("/picture/:id/mood/:id", moodControllers.browse);
 router.get("/picture/:id/mood/:id", moodControllers.read);
 
 router.get("/mood/:id/picture/:id", pictureControllers.browse);
-router.get("mood/:id/picture/:id", pictureControllers.read);
+router.get("mood/:id/picture/:id", moodControllers.read);
 
 module.exports = router;
