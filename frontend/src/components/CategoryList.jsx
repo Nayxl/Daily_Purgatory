@@ -20,7 +20,7 @@ function CategoryList() {
         <h1 className="title"> Menu </h1>
       </Link>
       {categories.map((category) => (
-        <li key={category.id} />
+        <li key={category.id}>{category.name}</li>
       ))}
       <div className="theme-container">
         <Link to="/note">

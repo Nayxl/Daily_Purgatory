@@ -14,6 +14,14 @@ function PictureList() {
       });
   }, []);
 
+  useEffect(() => {
+    fetch(`${import.meta.env.VITE_BACKEND_URL ?? `http://localhost:5000`}/mood`)
+      .then((res) => res.json())
+      .then((data) => {
+        setPictures(data);
+      });
+  }, []);
+
   return (
     <div className="container-page">
       <div>
@@ -23,11 +31,11 @@ function PictureList() {
         <section className="body-page">
           {pictures.length > 0 ? (
             pictures.map((picture) => (
-              <figure key={picture.id}>
+              <figure className="picture" key={picture.id}>
                 <figcaption>
                   <p className="picture-name"> {picture.name}</p>
                 </figcaption>
-                <Link to={`/mood/${picture.category_id}`}>
+                <Link to={`/mood/${picture.mood_id}`}>
                   <img
                     className="image-list"
                     src={`${import.meta.env.VITE_BACKEND_URL}${picture.image}`}

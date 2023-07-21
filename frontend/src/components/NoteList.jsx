@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import pinImage from "../assets/pin.png";
 
 function NoteList() {
   const [notes, setNotes] = useState([]);
@@ -21,7 +22,8 @@ function NoteList() {
         <section className="body-page">
           {notes.length > 0 ? (
             notes.map((note) => (
-              <figure key={note.id}>
+              <figure className="post-it" key={note.id}>
+                <img className="pin" src={pinImage} alt="pin" />
                 <figcaption>
                   <p>{note.title}</p>
                 </figcaption>

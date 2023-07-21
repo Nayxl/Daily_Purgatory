@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import papier from "../assets/papier.png";
 
 function MoodList() {
   const [moods, setMoods] = useState([]);
@@ -21,14 +22,15 @@ function MoodList() {
         <section className="body-page">
           {moods.length > 0 ? (
             moods.map((mood) => (
-              <figure key={mood.id}>
-                <figcaption>
-                  <p>{mood.title}</p>
-                </figcaption>
-                <figcaption>
-                  <p>{mood.description}</p>
-                </figcaption>
-              </figure>
+              <Link to={`/mood/${mood.mood_id}`}>
+                <figure className="mood" key={mood.id}>
+                  <img className="feuille-papier" src={papier} alt="pin" />
+                  <figcaption className="mood-content">
+                    <p>{mood.title}</p>
+                    <p>{mood.description}</p>
+                  </figcaption>
+                </figure>
+              </Link>
             ))
           ) : (
             <p className="no-add">Rien à afficher</p>
