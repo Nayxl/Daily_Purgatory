@@ -14,14 +14,6 @@ function PictureList() {
       });
   }, []);
 
-  useEffect(() => {
-    fetch(`${import.meta.env.VITE_BACKEND_URL ?? `http://localhost:5000`}/mood`)
-      .then((res) => res.json())
-      .then((data) => {
-        setPictures(data);
-      });
-  }, []);
-
   return (
     <div className="container-page">
       <div>

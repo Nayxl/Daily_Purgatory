@@ -227,7 +227,6 @@ figure.mood {
   justify-content: center;
   align-items: center;
   position: relative;
-  filter: hue-rotate(120deg);
   max-width: 100%;
   max-height: 100%;
 }
@@ -273,9 +272,10 @@ figcaption {
   margin: auto;
 }
 
-.chat {
-  height: 50px;
-  width: 50px;
+.img.chat {
+  height: 70vh;
+  width: 65vh;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
 }
